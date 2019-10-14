@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/kp5NKDhv", true))()
 
-local q1=false local q2=false local q3=false local q4=false local q5=false local q6=false local q7=false local q8=false local q9=false local q10=false local q11=false local q12=false local q13=false local q14=false local q15=false local q16=false local q17=false local q18=false local q19=false local q20=false
+local q1=false local q2=false local q3=false local q4=false local q5=false local q6=false local q7=false local q8=false local q9=false local q10=false local q11=false local q12=false local q13=false local q14=false local q15=false local q16=false local q17=false local q18=false local q19=false local q20=false local q21=false local q22=false
 
 local main = library:CreateWindow({
   text = "AutoFarm"
