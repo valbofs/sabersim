@@ -1,1 +1,149 @@
-print("testi 1 2 3 kuuluuko")
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/kp5NKDhv", true))()
+
+local q1=false local q2=false local q3=false local q4=false local q5=false local q6=false local q7=false local q8=false local q9=false local q10=false local q11=false local q12=false local q13=false local q14=false local q15=false local q16=false local q17=false local q18=false local q19=false local q20=false
+
+local main = library:CreateWindow({
+  text = "AutoFarm"
+})
+
+local hatch = library:CreateWindow({
+	text = "AutoHatch"
+})
+
+local set = library:CreateWindow({
+	text = "Settings"
+})
+
+main:AddToggle("AutoSwing", function()
+  if q1 == false then q1 = true
+  
+  _G.aa_Autoswing = true
+  while _G.aa_Autoswing == true do
+wait()
+local Event = game:GetService("ReplicatedStorage").Events.Clicked
+Event:FireServer()
+end
+  
+  else q1 = false
+  _G.aa_Autoswing = false
+  
+end
+end)
+
+main:AddToggle("AutoSell", function()
+  if q2 == false then q2 = true
+  
+  _G.aa_Autosell = true
+  while _G.aa_Autosell == true do
+  wait()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(532.80011, 184.062683, 151.486023)
+  
+  local Event = game:GetService("ReplicatedStorage").Events.Sell
+Event:FireServer()
+end
+  else q2 = false
+  _G.aa_Autosell = false
+end
+end)
+
+main:AddToggle("AutoBuy Swords", function()
+if q3 == false then q3 = true
+
+	_G.aa_Autobuysword = true
+	while _G.aa_Autobuysword == true do
+	wait(.5)
+local A_1 = "Swords"
+local Event = game:GetService("ReplicatedStorage").Events.BuyAll
+Event:FireServer(A_1)
+end
+else q3 = false
+
+_G.aa_Autobuysword = false
+
+end
+end)
+
+main:AddToggle("AutoBuy Dna", function()
+if q4 == false then q4 = true
+
+	_G.aa_Autobuydna = true
+	while _G.aa_Autobuydna == true do
+	wait(.5)
+local A_1 = "Backpacks"
+local Event = game:GetService("ReplicatedStorage").Events.BuyAll
+Event:FireServer(A_1)
+end
+else q4 = false
+
+_G.aa_Autobuydna = false
+
+end
+end)
+
+set:AddButton("Toggle Shop", function()
+  game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.Shop.Visible = not game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.Shop.Visible
+end)
+
+set:AddButton("Hide Pop-Ups", function()
+  game:GetService("Players").LocalPlayer.PlayerGui.Gui.LocalScript.GuiAnimations.NumberClone.Visible = false
+end)
+
+hatch:AddToggle("Pumpkin Egg", function()
+if q5 == false then q5 = true
+
+_G.aa_pumpkin = true
+while _G.aa_pumpkin == true do
+wait()
+
+local A_1 = game:GetService("ReplicatedStorage").Eggs.Pumpkin
+local A_2 = 1
+local Event = game:GetService("ReplicatedStorage").Events.HatchEggs
+Event:InvokeServer(A_1, A_2)
+
+end
+else q5 = false
+
+_G.aa_pumpkin = false
+
+end
+end)
+
+hatch:AddToggle("Basic Egg", function()
+if q6 == false then q6 = true
+
+_G.aa_basic = true
+while _G.aa_basic == true do
+wait()
+
+local A_1 = game:GetService("ReplicatedStorage").Eggs["Basic Egg"]
+local A_2 = 1
+local Event = game:GetService("ReplicatedStorage").Events.HatchEggs
+Event:InvokeServer(A_1, A_2)
+
+end
+else q6 = false
+
+_G.aa_basic = false
+
+end
+end)
+
+hatch:AddToggle("Wooden Egg", function()
+if q7 == false then q7 = true
+
+_G.aa_wooden = true
+while _G.aa_wooden == true do
+wait()
+
+local A_1 = game:GetService("ReplicatedStorage").Eggs["Wooden Egg"]
+local A_2 = 1
+local Event = game:GetService("ReplicatedStorage").Events.HatchEggs
+Event:InvokeServer(A_1, A_2)
+
+end
+else q7 = true
+
+_G.aa_wooden = false
+
+end
+end)
