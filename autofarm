@@ -63,7 +63,7 @@ _G.aa_Autobuysword = false
 end
 end)
 
-main:AddToggle("AutoBuy Dna", function()
+main:AddToggle("AutoBuy DNA", function()
 if q4 == false then q4 = true
 
 	_G.aa_Autobuydna = true
@@ -147,3 +147,69 @@ _G.aa_wooden = false
 
 end
 end)
+
+main:AddToggle("AutoFarm Candy", function()
+
+if q8 == false then q8 = true
+
+_G.aa_candy = true
+while _G.aa_candy == true do
+wait()
+for i,v in pairs (game.Workspace.CandyHolder:GetChildren()) do
+wait(.15)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
+
+else q8 = false
+
+_G.aa_candy = false
+
+end
+end)
+
+main:AddToggle("AutoFarm Coins", function()
+
+if q9 == false then q9 = true
+
+_G.aa_coin = true
+while _G.aa_coin == true do
+wait()
+for i,v in pairs (game.Workspace.CoinsHolder:GetChildren()) do
+wait(.15)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+end
+end
+
+else q9 = false
+
+_G.aa_coin = false
+
+end
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+game:GetService("Players").LocalPlayer.Idled:connect(
+   function()
+       game:GetService("VirtualUser"):CaptureController()
+       game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+   end
+)
