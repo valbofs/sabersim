@@ -6,12 +6,16 @@ local main = library:CreateWindow({
   text = "AutoFarm"
 })
 
+local tp = library:CreateWindow({
+	text = "Teleports"
+})
+
 local hatch = library:CreateWindow({
 	text = "AutoHatch"
 })
 
 local set = library:CreateWindow({
-	text = "Settings"
+	text = "Misc"
 })
 
 main:AddToggle("AutoSwing", function()
@@ -84,8 +88,37 @@ set:AddButton("Toggle Shop", function()
   game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.Shop.Visible = not game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.Shop.Visible
 end)
 
+set:AddButton("Toggle Crown Shop", function()
+  game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.CrownShop.Visible = not game:GetService("Players").LocalPlayer.PlayerGui.Gui.Submenus.CrownShop.Visible
+end)
+
 set:AddButton("Hide Pop-Ups", function()
   game:GetService("Players").LocalPlayer.PlayerGui.Gui.LocalScript.GuiAnimations.NumberClone.Visible = false
+end)
+
+set:AddToggle("Keep Sword Equipped", function()
+if q10 == false then q10 = true
+
+_G.aa_keepsword = true
+while _G.aa_keepsword == true do
+wait()
+
+if #game.Players.LocalPlayer.Backpack:GetChildren() >0 then 
+
+local name = game.Players.LocalPlayer.Name
+local hum = game.Workspace:FindFirstChild(name).Humanoid
+local saber = game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
+hum:UnequipTools()
+wait(.3)
+hum:EquipTool(saber)
+end
+end
+
+else q10 = false
+
+_G.aa_keepsword = false
+
+end
 end)
 
 hatch:AddToggle("Pumpkin Egg", function()
