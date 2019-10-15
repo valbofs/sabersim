@@ -101,7 +101,7 @@ if q10 == false then q10 = true
 
 _G.aa_keepsword = true
 while _G.aa_keepsword == true do
-wait()
+wait(.2)
 
 if #game.Players.LocalPlayer.Backpack:GetChildren() >0 then 
 
@@ -109,7 +109,7 @@ local name = game.Players.LocalPlayer.Name
 local hum = game.Workspace:FindFirstChild(name).Humanoid
 local saber = game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
 hum:UnequipTools()
-wait(.3)
+wait()
 hum:EquipTool(saber)
 end
 end
